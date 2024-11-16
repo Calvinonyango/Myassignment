@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+/* styles.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    height: 100vh;
+    background-color: #f4f4f9;
+}
+
+.container {
+    background: #ffffff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px 30px;
+    width: 350px;
+    text-align: left;
+}
+
+.search-section {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+.search-button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6c63ff;
+    color: white;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #5a54d6;
+}
+
+.weather-display {
+    margin-top: 20px;
+}
+
+.city-name {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.weather-details {
+    color: #555;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.weather-stats {
+    font-size: 16px;
+    color: #777;
+}
+
+.highlight {
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+.temperature {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    margin-top: 20px;
+}
+
+.icon img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.temp-value {
+    font-size: 48px;
+    font-weight: bold;
+    color: #333;
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #888;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #6c63ff;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+</style>
+<body>
+    <div class="container">
+        <div class="search-section">
+            <input type="text" placeholder="Enter a city..." class="search-input">
+            <button class="search-button">Search</button>
+        </div>
+        <div class="weather-display">
+            <h1 class="city-name">Paris</h1>
+            <p class="weather-details">Tuesday 07:45, moderate rain</p>
+            <p class="weather-stats">Humidity: <span class="highlight">87%</span>, Wind: <span class="highlight">7.2km/h</span></p>
+            <div class="temperature">
+                <div class="icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Sun Icon">
+                </div>
+                <div class="temp-value">24°C</div>
+            </div>
+        </div>
+        <footer class="footer">
+            <p>
+                This project was coded by <a href="#">Rennish Mboya</a> and is 
+                <a href="#">on GitHub</a> and <a href="#">hosted on Netlify</a>.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
