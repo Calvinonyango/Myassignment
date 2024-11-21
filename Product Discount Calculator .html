@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Discount Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.calculator {
+  background: #fff;
+  padding: 20px;
+  border: 2px solid #0000FF;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 500px;
+}
+
+h1 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  margin-bottom: 15px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button#calculateBtn {
+  background-color:;
+  color: black;
+  margin-bottom: 10px;
+}
+
+button#resetBtn {
+  background-color:;
+  color: black;
+  border-color:black;
+}
+
+</style>
+<body>
+  <div class="calculator">
+    <h1>Product Discount Calculator</h1>
+    <form id="discountForm">
+      <label for="productDescription">Product Description:
+      <input type="text" id="productDescription" name="productDescription">
+</label>
+      <label for="listPrice">List Price:
+      <input type="number" id="listPrice" name="listPrice" step="0.01">
+</label>
+      <label for="discountPercentage">Discount Percentage:
+      <input type="number" id="discountPercentage" name="discountPercentage" step="0.01">% 
+</label>
+      <label for="discountedAmount">Discounted Amount:
+      <input type="text" id="discountedAmount" name="discountedAmount" readonly>
+</label>
+      <label for="discountedPrice">Discounted Price:
+      <input type="text" id="discountedPrice" name="discountedPrice" readonly>
+</label>
+      <p><button type="button" id="calculateBtn">Calculate</button>
+      <button type="reset" id="resetBtn">Reset</button>
+</p>
+      </form>
+  </div>
+  <script>
+    document.getElementById('calculateBtn').addEventListener('click', function () {
+      const listPrice = parseFloat(document.getElementById('listPrice').value);
+      const discountPercentage = parseFloat(document.getElementById('discountPercentage').value);
+    
+      if (isNaN(listPrice) || isNaN(discountPercentage)) {
+        alert('Please enter valid values for List Price and Discount Percentage.');
+        return;
+      }
+    
+      const discountedAmount = (listPrice * discountPercentage) / 100;
+      const discountedPrice = listPrice - discountedAmount;
+    
+      document.getElementById('discountedAmount').value = discountedAmount.toFixed(2);
+      document.getElementById('discountedPrice').value = discountedPrice.toFixed(2);
+    });
+    </script>
+</body>
+</html>

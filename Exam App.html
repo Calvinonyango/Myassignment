@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam App</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 20px;
+}
+
+.exam-app {
+    display: inline-block;
+    text-align: left;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+th{
+text-align: center;
+}
+th, td {
+    padding: 8px;
+    text-align:;
+
+}
+td input{
+    border: none;
+}
+
+p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+b {
+    font-weight: bold;
+}
+.name{
+    text-align: left;
+    font-size: 18px;
+}
+.ave{
+    font-size: 18px;
+    text-align: center;
+}
+.no{
+    text-align: end;
+}
+
+    </style>
+</head>
+<body>
+    <div class="exam-app">
+        <h1>Exam App</h1>
+        <table width="300">
+            <tr>
+                <th>Name</th>
+                <th>CIM 322</th>
+            </tr>
+            <tr>
+                <td class="name">Mary</td>
+                <td class="no"><input type="number" id="maryScore" value="80" min="0" max="100"></td>
+            </tr>
+            <tr>
+                <td class="name">John</td>
+                <td class="no"><input  type="number" id="johnScore" value="40" min="0" max="100"></td>
+            </tr>
+            <tr>
+                <td class="ave">Average</td>
+                <td class="no" id="average">60</td>
+            </tr>
+        </table>
+        <p>Thanks for using the <b>Exam App</b></p>
+    </div>
+    <script>
+       
+function calculateAverage() {
+  
+    const maryScore = parseFloat(document.getElementById("maryScore").value) || 0;
+    const johnScore = parseFloat(document.getElementById("johnScore").value) || 0;
+
+   
+    const average = (maryScore + johnScore) / 2;
+
+  
+    document.getElementById("average").textContent = average.toFixed(2);
+}
+
+
+document.getElementById("maryScore").addEventListener("input", calculateAverage);
+document.getElementById("johnScore").addEventListener("input", calculateAverage);
+
+
+calculateAverage();
+
+    </script>
+</body>
+</html>
